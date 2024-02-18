@@ -1,18 +1,11 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Colors from '@/src/constants/Colors';
+import { Product } from '../types';
 
-
-interface IProduct {
-  id: number
-  image: string
-  name: string
-  price: number
-}
-
-const ProductListItem: React.FC<{ product: IProduct }> = ({ product }) => {
+const ProductListItem: React.FC<{ product: Product }> = ({ product }) => {
   return (
     <View style={styles.container}>
-      <Image source={{ uri: product.image }} style={styles.image} />
+      <Image source={{ uri: product.image! }} style={styles.image} />
       <Text style={styles.title}>{product.name}</Text>
       <Text style={styles.price}>${product.price}</Text>
     </View>
